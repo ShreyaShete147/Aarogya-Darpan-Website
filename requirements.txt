@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+pandas
+streamlit
+matplotlib
+plotly 
+fpdf
+gspread
+=======
+pandas
+streamlit
+matplotlib
+plotly 
+fpdf
+gspread
+>>>>>>> bebfa7c (Removed Sheets_connect.py)
+gspread_dataframe
