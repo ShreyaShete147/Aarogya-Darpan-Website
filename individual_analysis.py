@@ -7,13 +7,17 @@ import gspread
 from gspread_dataframe import get_as_dataframe
 import json
 from google.oauth2 import service_account
-
-
-
 # Read credentials from Streamlit secrets
 creds_dict = st.secrets["gcp_service_account"]
-creds = service_account.Credentials.from_service_account_info(creds_dict)
-gc = gspread.authorize(creds)
+# Read credentials from Streamlit secrets
+creds_dict = st.secrets["gcp_service_account"]
+scoped_creds = service_account.Credentials.from_service_account_info(
+    creds_dict,
+    scopes=["https://www.googleapis.com/auth/spreadsheets"]
+)
+gc = gspread.authorize(scoped_creds)
+
+
 sheet_id = "1YgTNeWitn8D1SjvF-wOUa-EJSR9fDQgxGn8O445WVHU"
 sh = gc.open_by_key(sheet_id)
 worksheet = sh.get_worksheet(0)
