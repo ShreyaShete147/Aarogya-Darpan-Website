@@ -1,6 +1,7 @@
 streamlit
 gspread
 pandas
+plotly
 fpdf
 google-auth
 gspread_dataframe
